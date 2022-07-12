@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: blanchedalmond;
+            color: brown;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1rem;
+            padding: 0;
+            margin: 0;
+        }
+        
+        #navbar {
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid brown;
+        }
+
+        .navbar {
+            list-style: none;
+            display: flex;
+        }
+        .navbar li {
+            padding: 0 0.8rem 0 0.8rem;
+            text-decoration: none;
+        }
+
+        #ShopCar {
+            margin-right: 12px;
+        }
+
+        #storemain {
+            position: relative;
+        }
+        #store {
+            border-bottom: 1px solid brown;
+            width: 100%;
+            height: 30vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        #store::before {
+            content: "";
+            position: absolute;
+            top: 0px;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+            background-image: url(https://as1.ftcdn.net/v2/jpg/03/13/50/58/1000_F_313505864_LEISNdn3iWuKmCwmAZyUQLId92dxv8M7.jpg);
+            background-size: auto;
+            z-index: 2;
+            opacity: 0.2;
+        }
+        #title  {
+            width: 100%;
+            padding: 1rem 0 0 0;
+            text-align: center;
+            z-index: 2;
+            margin: 0;
+        }
+
+        #subtitle {
+            width: 100%;
+            padding: 0 0 1rem 0;
+            text-align: center;
+            z-index: 2;
+            margin: 0;
+        }
+
+        #storehome {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            justify-items: center;  
+        }
+
+        #container-storehome {
+            border: 1px solid brown;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 0 40vh;
+            margin-bottom: 12px;
+        }
+
+        .formstyle {
+            display: inline-block;
+        }
+
+        .formstyle input {
+            width: 120px;
+            margin: 12px 12px 0 12px;
+        }
+
+        #answerJS {
+            font-size: 64px;
+        } 
+        
+        #storehome button {
+            width: 160px;
+            padding: 8px;
+            margin: auto;
+        }
+    </style>
+    <title>Tienda Super Dupis</title>
+</head>
+<body>
+    <section id="navbar">
+        <nav>
+            <ul class="navbar">
+                <li>Home</li>
+                <li>Quiénes somos</li>
+                <li>Catalogo</li>
+                <li>Contáctanos</li>
+            </ul>
+        </nav>
+        <div id="ShopCar">
+            <p>Carrito de Compras</p>
+        </div>
+    </section>
+    <section id="storemain">
+        <div id="store">
+            <h1 id="title">Bienvenido a la tienda</h1>
+            <p id="subtitle">Este es el segundo taller del Curso Práctico de JavaScript</p>
+        </div>
+    </section>
+    <section id="storehome">
+        <h2>Cálcula acá el precio final de tu producto</h2>
+        <div id="container-storehome">
+            <div class="formstyle">
+                <label for="precio">Ingresa el valor (sin puntos) del producto que quieres llevar</label>
+                <input type="number" id="precio">
+            </div>
+            <div class="formstyle">
+                <label for="descuento">Ingresa el descuento que recibiste por ser tú 😍</label>
+                <input type="number" id="descuento">
+            </div>
+        </div>
+        <button type="button" onclick="calculateprice()">¡Calcula!</button>
+        <div id="answer">
+            <h2>Tu precio especial es: </h2>
+            <p id="answerJS">&nbsp;</p>
+        </div>
+    </section>
+</body> 
+<script src="./descuentos.js"></script>
+</html>
